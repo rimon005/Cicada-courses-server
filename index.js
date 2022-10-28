@@ -20,7 +20,7 @@ app.get('/category', (req, res) => {
 
 app.get('/category/:id', (req, res) => {
     const id = req.params.id;
-    if (id === '08') {
+    if (id === '06') {
         res.send(courses)
     }
     else {
@@ -37,6 +37,12 @@ app.get('/courses/:id', (req, res) => {
     const id = req.params.id;
     const selectedCourse = courses.find(n => n._id === id);
     res.send(selectedCourse)
+})
+
+app.get('/enroll/:id' , (req , res) =>{
+    const id = req.params.id;
+    const enrollCourse = courses.find(e => e._id === id);
+    res.send(enrollCourse)
 })
 
 
